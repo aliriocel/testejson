@@ -1,0 +1,35 @@
+// Array com dados
+$cliente1 = array(
+    'codigo'               => '001',
+    'nome'                 => 'William',
+    'idade'                => '29',
+    'qtd_beneficiarios'    => '2',
+    'plano'                => 'null'
+);
+ 
+$cliente2 = array(
+    'codigo'               => '002',
+    'nome'                 => 'João',
+    'idade'                => '60',
+    'qtd_beneficiarios'    => '1',
+    'plano'                => 'null'
+);
+ 
+$cliente3 = array(
+    'codigo'               => '003',
+    'nome'                 => 'Maria',
+    'idade'                => '44',
+    'qtd_beneficiarios'    => '1',
+    'plano'                => 'null'
+);
+ 
+$dados = array($cliente1, $cliente2, $cliente3);
+ 
+$dados_json = json_encode($dados);
+ 
+$fp = fopen("beneficiarios.json","a");
+ 
+$escreve = fwrite($fp, $dados_json);
+ 
+
+fclose($fp);
